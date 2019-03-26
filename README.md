@@ -1,4 +1,4 @@
-# puppet-linux-auth-aad
+# puppet-modules
 
 See also:
 
@@ -6,3 +6,4 @@ See also:
 - https://gist.github.com/reidmv/2597027
 - https://github.com/puppetlabs/pupperware
 - https://github.com/JacobHenner/puppet-pdk-docker
+- https://github.com/gbitgit/puppet-modules
