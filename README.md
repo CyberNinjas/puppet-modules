@@ -1,4 +1,4 @@
-# puppet-pam_aad
+# puppet-linux-auth-aad
 
 See also:
 
