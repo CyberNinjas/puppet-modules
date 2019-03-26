@@ -3,3 +3,4 @@
 See also:
 
 - https://github.com/ghoneycutt/puppet-module-pam
+- https://gist.github.com/reidmv/2597027
