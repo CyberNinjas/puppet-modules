@@ -13,66 +13,66 @@
 
 class pam_aad::debian {
 
-	/* TODO See: https://github.com/puppetlabs/puppetlabs-apt */
-	exec { 'apt-update':
-		path => ['/usr/bin', '/bin'],
-		command => 'apt-get update'
-	}
+  /* TODO See: https://github.com/puppetlabs/puppetlabs-apt */
+  exec { 'apt-update':
+    path => ['/usr/bin', '/bin'],
+    command => 'apt-get update'
+  }
 
-	package { 'automake':
-		require => Exec['apt-update'],
-		ensure => installed,
-	}
+  package { 'automake':
+    require => Exec['apt-update'],
+    ensure => installed,
+  }
 
-	package { 'build-essential':
-		require => Exec['apt-update'],
-		ensure => installed,
-	}
+  package { 'build-essential':
+    require => Exec['apt-update'],
+    ensure => installed,
+  }
 
-	package { 'git':
-		require => Exec['apt-update'],
-		ensure => installed,
-	}
+  package { 'git':
+    require => Exec['apt-update'],
+    ensure => installed,
+  }
 
-	package { 'libcurl4-openssl-dev':
-		require => Exec['apt-update'],
-		ensure => installed,
-		alias => 'libcurl-dev'
-	}
+  package { 'libcurl4-openssl-dev':
+    require => Exec['apt-update'],
+    ensure => installed,
+    alias => 'libcurl-dev'
+  }
 
-	package { 'libjansson-dev':
-		require => Exec['apt-update'],
-		ensure => installed,
-	}
+  package { 'libjansson-dev':
+    require => Exec['apt-update'],
+    ensure => installed,
+  }
 
-	package { 'libpam0g-dev':
-		require => Exec['apt-update'],
-		ensure => installed,
-		alias => 'libpam-dev'
-	}
+  package { 'libpam0g-dev':
+    require => Exec['apt-update'],
+    ensure => installed,
+    alias => 'libpam-dev'
+  }
 
-	package { 'libssl-dev':
-		require => Exec['apt-update'],
-		ensure => installed,
-	}
+  package { 'libssl-dev':
+    require => Exec['apt-update'],
+    ensure => installed,
+  }
 
-	package { 'libtool':
-		require => Exec['apt-update'],
-		ensure => installed,
-		alias => 'libtool'
-	}
+  package { 'libtool':
+    require => Exec['apt-update'],
+    ensure => installed,
+    alias => 'libtool'
+  }
 
-	package { 'pkg-config':
-		require => Exec['apt-update'],
-		ensure => installed,
-	}
+  package { 'pkg-config':
+    require => Exec['apt-update'],
+    ensure => installed,
+  }
 
-	package { 'uuid-dev':
-		require => Exec['apt-update'],
-		ensure => installed,
-		alias => 'libuuid-dev'
-	}
+  package { 'uuid-dev':
+    require => Exec['apt-update'],
+    ensure => installed,
+    alias => 'libuuid-dev'
+  }
 
-	require pam_aad::deps::libjwt
-		require pam_aad::deps::libsds
+  require pam_aad::deps::libjwt
+    require pam_aad::deps::libsds
 }
