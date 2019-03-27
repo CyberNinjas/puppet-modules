@@ -13,64 +13,64 @@
 
 class pam_aad::debian {
 
-  /* TODO See: https://github.com/puppetlabs/puppetlabs-apt */
+  # TODO See: https://github.com/puppetlabs/puppetlabs-apt
   exec { 'apt-update':
-    path => ['/usr/bin', '/bin'],
+    path    => ['/usr/bin', '/bin'],
     command => 'apt-get update'
   }
 
   package { 'automake':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
   }
 
   package { 'build-essential':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
   }
 
   package { 'git':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
   }
 
   package { 'libcurl4-openssl-dev':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
-    alias => 'libcurl-dev'
+    alias   => 'libcurl-dev'
   }
 
   package { 'libjansson-dev':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
   }
 
   package { 'libpam0g-dev':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
-    alias => 'libpam-dev'
+    alias   => 'libpam-dev'
   }
 
   package { 'libssl-dev':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
   }
 
   package { 'libtool':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
-    alias => 'libtool'
+    alias   => 'libtool'
   }
 
   package { 'pkg-config':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
   }
 
   package { 'uuid-dev':
+    ensure  => installed,
     require => Exec['apt-update'],
-    ensure => installed,
-    alias => 'libuuid-dev'
+    alias   => 'libuuid-dev'
   }
 
   require pam_aad::deps::libjwt
