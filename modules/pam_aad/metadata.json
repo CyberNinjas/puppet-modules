@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "Lucas Ramage <lramage@cyberninjas.com>",
   "summary": "",
-  "license": "proprietary",
+  "license": "GPL-3.0-or-later",
   "source": "",
   "dependencies": [
 
